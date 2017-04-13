@@ -16,7 +16,7 @@ Lazy VE Extraction automates the tedious process of downloading multiple Excel f
  2. Once installed, click *Open Menu* and then *Customize*. Drag Selenium IDE over for quick access.
 
 #### Download Script Files
-1. Download the Scripts from [GitHub](https://github.com/estasney/Automation/archive/master.zip)
+1. Download the Scripts from [GitHub](https://github.com/estasney/LazyVE/archive/master.zip)
 1. Open the download folder, right click on *Automation-master* and click *Extract All*
 1. Pick a folder to extract it to. Remember it, we'll need it later.
 
