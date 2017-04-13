@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://www2.virtualedge.com/" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<!--search setup-->
+<tr>
+	<td>storeEval</td>
+	<td>confirm(&quot;Welcome to Lazy VE Extraction. Before we begin extracting, do you need help setting up your search?&quot;)</td>
+	<td>enterBool</td>
+</tr>
+<!--gotoif statements-->
+<tr>
+	<td>gotoIf</td>
+	<td>${enterBool}==true</td>
+	<td>searchHelp</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>${enterBool}==false</td>
+	<td>startResults</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>searchHelp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>prompt(&quot;OK, I'll assist with your search. Let's start with your search parameters. Please enter your boolean string&quot;)</td>
+	<td>userBool</td>
+</tr>
+<!--OFCCP Compliance-->
+<tr>
+	<td>mouseOver</td>
+	<td>xpath=(//input[@value='▼ '])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>xpath=(//input[@value='▼ '])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>id=selOFCCPJob_popup0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>id=selOFCCPJob_popup0</td>
+	<td></td>
+</tr>
+<!--filterdate-->
+<tr>
+	<td>mouseOver</td>
+	<td>xpath=(//input[@value='▼ '])[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>xpath=(//input[@value='▼ '])[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>id=SELPROFILEDATES_popup1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>id=SELPROFILEDATES_popup1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>//div[@id='widget_TXTTOSEARCHDATE']/div[2]/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>id=TXTTOSEARCHDATE</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=TXTTOSEARCHDATE</td>
+	<td>12/31/2014</td>
+</tr>
+<!--boolean box-->
+<!--select boolean-->
+<tr>
+	<td>mouseOver</td>
+	<td>xpath=(//input[@value='▼ '])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>xpath=(//input[@value='▼ '])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>id=FilterType_popup2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>id=FilterType_popup2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=TXTKEYWORDSEARCHCRITERIA</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=TXTKEYWORDSEARCHCRITERIA</td>
+	<td>${userBool}</td>
+</tr>
+<!--candidate filters-->
+<tr>
+	<td>clickAt</td>
+	<td>css=#idSearchFilter &gt; div:nth-of-type(2) img.dijitArrowNode</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>alert(&quot;Complete any remaining filters. When complete, press 'OK' to continue&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--label-->
+<tr>
+	<td>label</td>
+	<td>startResults</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeElementPresent</td>
+	<td>id=idCandidateSearchButton_label</td>
+	<td>userStartSearch</td>
+</tr>
+<!--checks if user has already clicked search-->
+<tr>
+	<td>gotoIf</td>
+	<td>${userStartSearch}==true</td>
+	<td>clickSearch</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>${userStartSearch}==false</td>
+	<td>enterResults</td>
+</tr>
+<!--user didn't click search, click it for them-->
+<tr>
+	<td>label</td>
+	<td>clickSearch</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[@id='idCandidateSearchButton']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>goto</td>
+	<td>enterResults</td>
+	<td></td>
+</tr>
+<!--user has clicked search-->
+<tr>
+	<td>label</td>
+	<td>enterResults</td>
+	<td></td>
+</tr>
+<!--skip to here if search has already ran-->
+<!--verify page has loaded-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//tbody[@dojoattachpoint='tblBody']/tr[2]</td>
+	<td></td>
+</tr>
+<!--open column chooser-->
+<tr>
+	<td>click</td>
+	<td>css=span[dojoattachpoint=&quot;ColumnSelectorContainer&quot;] &gt; span</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=.TableHead&gt;span&gt;a&gt;img</td>
+	<td></td>
+</tr>
+<!--wait for keyword box to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>First Name (r)</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Last Name (r)</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Most Recent Employer</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Most Recent Job Title</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Email Address</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Home Phone</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Preferred Phone</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Primary Phone</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Work Phone</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>City</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>State/Province</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Country</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Zip/Postal</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>How did you</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Specifically</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Virtual Edge</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Last Update</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>Area of Interest</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td>User Name</td>
+</tr>
+<!--click filter button-->
+<tr>
+	<td>click</td>
+	<td>css=#idFrmCustomColumnsSearchCriteriaFilters &gt; div:nth-of-type(5) &gt; div &gt; span:nth-of-type(1)</td>
+	<td></td>
+</tr>
+<!--wait for table to load-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#divAddFieldSearchResults &gt; table:nth-child(1) &gt; tbody:nth-child(1) &gt; tr:nth-child(1) &gt; td:nth-child(1) &gt; table:nth-child(2) tbody &gt; tr:nth-of-type(1) &gt; td:nth-of-type(3) input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementHeight</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td>13</td>
+</tr>
+<!--Check the first box-->
+<tr>
+	<td>click</td>
+	<td>css=#idAvailableFields &gt;tr:nth-of-type(1) input</td>
+	<td></td>
+</tr>
+<!--Clear search box-->
+<tr>
+	<td>type</td>
+	<td>id=keyword</td>
+	<td></td>
+</tr>
+<!--click done button-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[4]/center/span/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[4]/center/span/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='datahover_r0_cCandidateName_candidateResult']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>css=.revitGrid div:nth-of-type(1) &gt; span:nth-of-type(2) &gt; table &gt; tbody</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>css=div.dijitReset.dijitArrowButtonInner</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>css=tbody.dijitReset tr:nth-of-type(4) td:nth-of-type(2)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=tbody.dijitReset tr:nth-of-type(4) td:nth-of-type(2)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='datahover_r0_cCandidateName_candidateResult']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//tbody[@dojoattachpoint='containerNode']/tr[4]/td[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[4]/center/span/span[2]</td>
+	<td></td>
+</tr>
+<!--change rows per page to 100-->
+<tr>
+	<td>click</td>
+	<td>//tbody[@dojoattachpoint='containerNode']/tr[4]/td[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//tbody[@dojoattachpoint='tblBody']/tr[90]</td>
+	<td></td>
+</tr>
+<!--ask for how many pages are needed-->
+<tr>
+	<td>storeEval</td>
+	<td>prompt(&quot;Please enter the number of results to extract from your search&quot;)</td>
+	<td>userInput</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>Math.ceil(${userInput}/100)</td>
+	<td>pageNum</td>
+</tr>
+<!--create while loop-->
+<tr>
+	<td>getEval</td>
+	<td>index = 0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>while</td>
+	<td>index &lt; ${pageNum};</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${value}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>getEval</td>
+	<td>index++;</td>
+	<td></td>
+</tr>
+<!--click export to excel-->
+<tr>
+	<td>click</td>
+	<td>//span[@title='Export']/span</td>
+	<td></td>
+</tr>
+<!--click next page-->
+<tr>
+	<td>click</td>
+	<td>//span[@title='Next Page']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//tbody[@dojoattachpoint='tblBody']/tr[1]</td>
+	<td>15000</td>
+</tr>
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//span[@title='Export']/span</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
