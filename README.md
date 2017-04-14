@@ -16,7 +16,8 @@ Lazy VE Extraction automates the tedious process of downloading multiple Excel f
  2. Once installed, click *Open Menu* and then *Customize*. Drag Selenium IDE over for quick access.
  
 #### Change how Firefox Handles Downloads
-1. In Firefox, navigate to [Options](about:preferences)
+1. In Firefox, navigate to Options. Or copy-paste this into your address bar
+`about:preferences`
 2. Click *Applications*
 3. For *Microsoft Excel 97-2003 Worksheet*, set the action to *Save File*
 
