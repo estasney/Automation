@@ -35,11 +35,12 @@ Lazy VE Extraction automates the tedious process of downloading multiple Excel f
 2. Click *Options* :arrow_right: *Options* 
 3. On the General Tab, find *Selenium Core extensions (user-extensions.js)* and click *Browse...*
 4. Find the folder where you extracted the ZIP file. Locate the file *sideflow* or *sideflow.js* and click *Open*
-5. Click *OK*
+5. Next, un-check *Start recording immediately on open*
+6. Click *OK*
 
 #### Load the Script
 1. Click *File* :arrow_right: *Open*
-2. In the same folder, locate Lazy VE 0.5.0. Note: The numbers may be different. This simply indicates the version number.
+2. In the same folder, locate Lazy VE 0.5.1 Note: The numbers may be different. This simply indicates the version number.
 3. Select Lazy VE and Click *open*
 
 ## Running the Script
