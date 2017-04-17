@@ -103,7 +103,7 @@
 <tr>
 	<td>type</td>
 	<td>id=TXTTOSEARCHDATE</td>
-	<td>12/31/2014</td>
+	<td>1/1/2015</td>
 </tr>
 <!--boolean box-->
 <!--select boolean-->
@@ -148,14 +148,91 @@
 	<td>css=#idSearchFilter &gt; div:nth-of-type(2) img.dijitArrowNode</td>
 	<td></td>
 </tr>
+<!--add new and available candidates to filter-->
 <tr>
-	<td>storeEval</td>
-	<td>alert(&quot;Complete any remaining filters. When complete, press 'OK' to continue&quot;)</td>
+	<td>mouseOver</td>
+	<td>xpath=(//input[@value='▼ '])[7]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>xpath=(//input[@value='▼ '])[7]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>id=SELJOBSEEKERSTATUSID_popup0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>id=SELJOBSEEKERSTATUSID_popup0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>xpath=(//input[@value='▼ '])[7]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>xpath=(//input[@value='▼ '])[7]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>id=SELJOBSEEKERSTATUSID_popup1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>id=SELJOBSEEKERSTATUSID_popup1</td>
+	<td></td>
+</tr>
+<!--candidate type set to external-->
+<tr>
+	<td>mouseOver</td>
+	<td>xpath=(//input[@value='▼ '])[10]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>xpath=(//input[@value='▼ '])[10]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>id=sel_Jobseeker_JobseekerTypeID_popup0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>id=sel_Jobseeker_JobseekerTypeID_popup0</td>
 	<td></td>
 </tr>
 <tr>
 	<td>pause</td>
 	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>alert(&quot;Complete any remaining filters. When complete, press 'OK' to continue&quot;)</td>
 	<td></td>
 </tr>
 <!--label-->
